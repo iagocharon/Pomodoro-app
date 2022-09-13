@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("http://fonts.cdnfonts.com/css/lato");
+
+:root {
+  --background: #1e213f;
+  --background-dark: #161930;
+  --background-light: #f0f0fa;
+  --primary-color: #d8dffb;
+  --secondary-color: #585c72;
+  --accent-color: #e67975;
+  --font-family: "Lato", sans-serif;
+}
+
+* {
+  font-family: var(--font-family) !important;
+}
+
+html,
+body {
+  background-color: var(--background) !important;
+  color: var(--primary-color) !important;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.modal-content {
+  padding: 5px 20px !important;
+  border-radius: 30px !important;
+}
