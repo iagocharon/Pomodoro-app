@@ -19,6 +19,7 @@ export class AppComponent {
   shortBreak: boolean = false;
   longBreak: boolean = false;
   paused: boolean = false;
+  ended: boolean = false;
 
   pomodoroMinutes!: number;
   pomodoroSeconds!: number;
@@ -79,6 +80,15 @@ export class AppComponent {
         } else {
           this.seconds = 0;
           this.minutes = 0;
+          let audio = new Audio();
+          audio.src = "../assets/alarm.m4a";
+          audio.load();
+          audio.play();
+          this.ended = true;
+          clearInterval(this.timer);
+          setTimeout(() => {
+            alert("Se acabó el tiempo");
+          }, 100);
         }
       }, 1000);
     }
@@ -95,6 +105,7 @@ export class AppComponent {
     this.timer = null;
     this.setClock();
     this.paused = false;
+    this.ended = false;
   }
 
   setClock() {

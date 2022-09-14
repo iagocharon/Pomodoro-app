@@ -22,7 +22,6 @@ function timer() {
         setTimeout(loadButtons(), 10);
         progress = setInterval(() => {
           time = document.getElementsByClassName("time")[0];
-          console.log(time.innerHTML);
           if (time.innerHTML.length == 5) {
             minutes = time.innerHTML[0] + time.innerHTML[1];
             seconds = time.innerHTML[3] + time.innerHTML[4];

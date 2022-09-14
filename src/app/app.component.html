@@ -13,7 +13,9 @@
     <div class="time">{{ minutes }}:{{ showSeconds() }}</div>
     <div class="buttons">
       <button id="start" (click)="startTimer()" *ngIf="!timer">Iniciar</button>
-      <button id="stop" (click)="pauseTimer()" *ngIf="timer">Detener</button>
+      <button id="stop" (click)="pauseTimer()" *ngIf="timer && !ended">
+        Detener
+      </button>
       <button id="reset" (click)="resetTimer()" *ngIf="timer || paused">
         Reiniciar
       </button>
